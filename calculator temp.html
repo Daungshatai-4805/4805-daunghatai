@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR TEMPERATURE</title>
+
+    <script>
+       function basicCalculation(){
+           var n1 = parseFloat(document.getElementById("num1").value);
+           var n2 = parseFloat(document.getElementById("num2").value);
+           var res ;
+           operation = document.getElementById("operator").value
+
+           if (operation === "+") {
+              res = n1+n2 ;  
+           }
+           if (operation === "-") {
+              res = n1-n2 ;  
+           }
+          
+           if (operation === "*") {
+              res = n1*n2 ;  
+           }
+          
+           if (operation === "/") {
+              res = n1/n2 ;  
+           }
+          
+
+           document.getElementById("result").value = res.toFixed(3); 
+       }
+    </script>
+      <style>
+
+        .calculator {
+            width: 200px;
+            height: 200px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: rgb(162, 180, 214);
+            padding: 15px;
+            margin: 20px;
+            padding-left: 40px;
+            font-family: monospace;
+        }
+        .calculator h2 {
+            text-align: center;
+        }
+        .calculator input {
+            background-color: rgb(238, 237, 232);
+        }
+        .calculator button {
+            background-color: rgb(238, 237, 232);
+        }
+        .calculator select {
+            background-color: rgb(238, 237, 232);
+        }
+      </style>
+      <style>
+            .tempConversion {
+            width: 200px;
+            height: 200px;
+            border:5px solid black;
+            border-radius: 20px;
+            background-color: rgb(162, 180, 214);
+            padding: 15px;
+            margin: 20px;
+            padding-left: 40px;
+            font-family: monospace;
+            }
+            .tempConversion h3 {
+            text-align: center;
+            }
+            .tempConversion input {
+            background-color: rgb(238, 237, 232);
+            }
+            .tempConversion button {
+            background-color: rgb(238, 237, 232);
+           }
+      </style>
+      <script>
+          function c2f () {
+              let c = parseFloat(document.getElementById("cel").value);
+              let f = c * 9 / 5  + 32 ;
+              document.getElementById("fah").value = f.toFixed(2);
+          }
+          function f2c () {
+            let f = parseFloat(document.getElementById("fah").value);
+            let c = (f - 32) * 5 / 9 ;
+            document.getElementById("cel").value = c.toFixed(2);
+          }
+      </script>
+      <style>
+          .container{
+              display: flex;
+              flex-wrap: wrap;
+          }
+          
+      </style>
+
+</head>
+<body>
+<div class="container">
+  <!-- Basic basicalculation -->    
+    <div class="calculator">
+    <h2>Basic Calculator</h2>
+    <label for="">Number1</label> <br>
+    <input type="text" name="" id="num1" size="10">
+    <select name="" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
+    <br>
+    <label for="">Number2</label> <br>
+    <input type="text" name="" id="num2" size="10">
+    <br>
+    <label for="">Result</label>
+    <br>
+    <input type="text" name="" id="result" size="10">
+    <button onclick="basicCalculation()">Enter</button>
+</div>
+
+
+<!-- Temperature Conversion -->
+<div class="tempConversion">
+    <h3>Temperature Conversion</h3>
+    <label for="">Celcius(&#8451;)</label> <br>
+    <input type="text" name="" id="cel" size="10">
+    <button onclick="c2f()">C2F</button> <br>
+    <br>
+    <label for="">Fahrenheit(&#8457;)</label> <br>
+    <input type="text" name="" id="fah" size="10">
+    <button onclick="f2c()">F2C</button> <br>
+
+    
+
+
+</div>
+
+</div> 
+</body>
+</html>

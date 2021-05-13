@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIANGLE</title>
+    <style>
+
+        .triarea h2 {
+            text-align: center;
+            background-color: rgb(169, 143, 175);
+            color: cornsilk;
+            border-radius: 5px;
+        }
+
+        .triarea input {
+            background-color: rgb(112, 112, 156);
+            border-radius: 15px;
+        }
+
+        .triarea input {
+            background-color: rgb(201, 200, 198);
+               width: 150px;
+               border: 5px solid rgb(103, 43, 131);
+               padding: 5px;
+               margin-left: 20px;
+               margin-bottom: 10px;
+               margin-top: 3px;
+        }
+
+        .triarea {
+            text-align: center;
+            margin: auto;
+            align-items: center;
+            border: rgb(48, 49, 88) solid 6px;
+            border-radius: 5px;
+            background-color: rgb(199, 177, 209);
+            width: 550px;
+        }
+
+        .box {
+            padding: 30px;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+
+
+<body style="background-color: rgb(226, 211, 228);">
+    <div class="triarea">
+        <h2>Triangle Area</h2>
+        <img src="" alt="">
+        <hr>Base:<br>
+        <input type="text" name="" id="base" value="10">
+        <hr>Height:<br>
+        <input type="text" name="" id="height" value="10"><br>
+        <p id="result"></p>
+        <script>
+            let b=document.getElementById("base");
+            let h=document.getElementById("height");
+            let area=document.getElementById("result");
+            b.addEventListener("input",triarea);
+            h.addEventListener("input",triarea);
+            function triarea() {
+                let base=parseFloat(b.value);
+                let height=parseFloat(h.value);
+                area.innerHTML=`The triangle area is ${(0.5*base*height).toFixed(2)}.`
+            }
+          </script>  
+          </div>
+          <div class="box">
+          <img src="Triangle.jpg">
+           
+
+    </div>
+</body>
+</html>
